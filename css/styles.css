@@ -1,0 +1,23 @@
+:root {
+  --orangeColor: #ffa600;
+  --large-font_size: 30px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: var(--large-font_size);
+}
+
+header {
+  text-align: center;
+  color: var(--orangeColor);
+}
+
+.pokedex_output {
+  text-align: center;
+  flex: 1 1 100px;
+  margin-bottom: 40px;
+}
