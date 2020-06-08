@@ -4,8 +4,10 @@ var pokemonList = [
   {name: 'Wailord', height: 14.5, types: ['water']}
 ];
 
-for (var i = 0; i < pokemonList.length; i++) {
-  document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + ")");
-  if (pokemonList[i].height > 10) document.write(" - Wow, that's big! ")
+function pokedex_output(pokemon){
+  document.write(pokemon.name + " (height: " + pokemon.height + ")");
+  if (pokemon.height > 10) document.write(" - Wow, that's big! ")
   document.write("<br><br>");
 }
+
+pokemonList.forEach(pokedex_output);
