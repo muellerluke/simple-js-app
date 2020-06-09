@@ -13,11 +13,15 @@ var pokemonRepository = (function(){
     button.classList.add('list-item-button');
     listItem.appendChild(button);
     list.appendChild(listItem);
-    button.addEventListener('click', showDetails(pokemon));
+    button.addEventListener('click', () => showDetails(pokemon));
   }
 
   function add(pokemon) {
 
+  }
+
+  function showDetails(pokemon) {
+    console.log('Name: ' + pokemon.name + '\n height: ' + pokemon.height + '\n Types: ' + pokemon.types);
   }
 
   function getAll() {
@@ -33,10 +37,6 @@ var pokemonRepository = (function(){
 
 function pokedex_output(pokemon){
   pokemonRepository.addListItem(pokemon);
-}
-
-function showDetails(pokemon) {
-  console.log('Name: ' + pokemon.name + '\n height: ' + pokemon.height + '\n Types: ' + pokemon.types);
 }
 
 pokemonRepository.getAll().forEach(pokedex_output);
