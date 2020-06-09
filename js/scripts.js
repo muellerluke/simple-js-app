@@ -31,7 +31,6 @@ var pokemonRepository = (function(){
             detailsUrl: item.url
           };
           add(pokemon);
-          addListItem(pokemon);
         });
       }).catch(function (e) {
         console.error(e);
