@@ -5,8 +5,19 @@ var pokemonRepository = (function(){
     {name: 'Wailord', height: 14.5, types: ['water']}
   ];
 
+  function addListItem(pokemon) {
+    var list = document.querySelector('.pokemon-list');
+    var listItem = document.createElement('li');
+    var button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('list-item-button');
+    listItem.appendChild(button);
+    list.appendChild(listItem);
+    button.addEventListener('click', showDetails(pokemon));
+  }
+
   function add(pokemon) {
-    if(typeof pokemon === 'object' && 'name' in pokemon && 'height' in pokemon && 'types' in pokemon) pokemonList.push(pokemon);
+
   }
 
   function getAll() {
@@ -14,15 +25,18 @@ var pokemonRepository = (function(){
   }
 
   return {
+    addListItem: addListItem,
     add: add,
     getAll: getAll
   };
 })()
 
 function pokedex_output(pokemon){
-  document.write(pokemon.name + " (height: " + pokemon.height + ")");
-  if (pokemon.height > 10) document.write(" - Wow, that's big! ")
-  document.write("<br><br>");
+  pokemonRepository.addListItem(pokemon);
+}
+
+function showDetails(pokemon) {
+  console.log('Name: ' + pokemon.name + '\n height: ' + pokemon.height + '\n Types: ' + pokemon.types);
 }
 
 pokemonRepository.getAll().forEach(pokedex_output);

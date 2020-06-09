@@ -21,3 +21,27 @@ header {
   flex: 1 1 100px;
   margin-bottom: 40px;
 }
+
+
+ul {
+  list-style-type: none;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid black;
+  width: 25%;
+  margin: auto;
+  min-width: 200px;
+  max-width: 250px;
+}
+
+button {
+  border: 0px;
+  font-size: 18px;
+  background: #c7c7c7;
+
+}
+
+li {
+    background: #c7c7c7;
+    margin: 5px;
+}
